@@ -1262,8 +1262,8 @@ export default function Home() {
               {lang === "en" ? "Get In Touch" : "Hubungi Saya"}
             </a>
             <a
-              href="/cv.pdf"
-              download
+              href="/sertif/CV-Ariski Ade Raharjo-Universitas Jember.pdf"
+              download="CV-Ariski Ade Raharjo-Universitas Jember.pdf"
               className="px-7 py-3 rounded-full bg-gradient-to-r from-blue-500 to-fuchsia-500 text-white font-bold shadow-lg hover:scale-105 transition ripple-btn border-2 border-transparent"
               onClick={handleRipple}
             >
