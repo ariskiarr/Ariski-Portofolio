@@ -1,27 +1,27 @@
-'use client'
+"use client";
 
-import { Component, ReactNode } from 'react'
+import { Component, ReactNode } from "react";
 
 interface Props {
-  children: ReactNode
+  children: ReactNode;
 }
 
 interface State {
-  hasError: boolean
+  hasError: boolean;
 }
 
 export class ErrorBoundary extends Component<Props, State> {
   constructor(props: Props) {
-    super(props)
-    this.state = { hasError: false }
+    super(props);
+    this.state = { hasError: false };
   }
 
   static getDerivedStateFromError(): State {
-    return { hasError: true }
+    return { hasError: true };
   }
 
   componentDidCatch(error: Error, errorInfo: React.ErrorInfo) {
-    console.error('Error caught by boundary:', error, errorInfo)
+    console.error("Error caught by boundary:", error, errorInfo);
   }
 
   render() {
@@ -48,16 +48,17 @@ export class ErrorBoundary extends Component<Props, State> {
               Oops! Something went wrong
             </h2>
             <p className="text-gray-600 dark:text-gray-400 mb-6">
-              We&apos;re sorry for the inconvenience. Please try refreshing the page or contact us if the problem persists.
+              We&apos;re sorry for the inconvenience. Please try refreshing the
+              page or contact us if the problem persists.
             </p>
             <div className="flex gap-4 justify-center">
-              <button 
+              <button
                 onClick={() => this.setState({ hasError: false })}
                 className="px-6 py-3 bg-gradient-to-r from-blue-500 to-purple-500 text-white font-semibold rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
               >
                 Try Again
               </button>
-              <button 
+              <button
                 onClick={() => window.location.reload()}
                 className="px-6 py-3 bg-white dark:bg-gray-800 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-200 font-semibold rounded-xl hover:bg-gray-50 dark:hover:bg-gray-700 transition-all duration-300"
               >
@@ -66,9 +67,9 @@ export class ErrorBoundary extends Component<Props, State> {
             </div>
           </div>
         </div>
-      )
+      );
     }
 
-    return this.props.children
+    return this.props.children;
   }
 }

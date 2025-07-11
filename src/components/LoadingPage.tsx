@@ -1,12 +1,14 @@
-'use client'
+"use client";
 
-import LoadingLottie from './LoadingLottie'
+import LoadingLottie from "./LoadingLottie";
 
 interface LoadingPageProps {
-  message?: string
+  message?: string;
 }
 
-export default function LoadingPage({ message = "Loading..." }: LoadingPageProps) {
+export default function LoadingPage({
+  message = "Loading...",
+}: LoadingPageProps) {
   return (
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-white to-blue-50 dark:from-black dark:to-gray-900">
       <div className="text-center">
@@ -21,5 +23,5 @@ export default function LoadingPage({ message = "Loading..." }: LoadingPageProps
         </p>
       </div>
     </div>
-  )
+  );
 }
