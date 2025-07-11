@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://webporto-ariski.vercel.app/sitemap.xml
+
+# Disallow certain paths (if any)
+# Disallow: /admin/
+# Disallow: /private/

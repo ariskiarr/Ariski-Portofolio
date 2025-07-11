@@ -23,4 +23,422 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  scroll-behavior: smooth;
+}
+
+/* Existing animations */
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-fade-in-up.delay-150 {
+  animation-delay: 0.15s;
+}
+
+/* Float animation for hero image */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Scroll animations */
+@keyframes scroll-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scroll-in-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-in-right {
+  0% {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes scroll-in-scale {
+  0% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Shimmer effect for progress bars */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite;
+}
+
+/* Ripple effect for buttons */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(2);
+    opacity: 0;
+  }
+}
+
+.animate-ripple {
+  animation: ripple 0.6s linear;
+}
+
+/* Modern scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgb(243 244 246);
+}
+
+.dark ::-webkit-scrollbar-track {
+  background: rgb(17 24 39);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, rgb(59 130 246), rgb(168 85 247));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, rgb(37 99 235), rgb(147 51 234));
+}
+
+/* Card hover effects */
+.card-3d-hover {
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.card-3d-hover:hover {
+  transform: perspective(1000px) rotateY(5deg) rotateX(5deg) scale(1.02);
+}
+
+/* Magnetic button effect */
+.magnetic-button {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.magnetic-button:hover {
+  transform: scale(1.05);
+}
+
+/* Glowing text animation */
+@keyframes glow-pulse {
+  0%,
+  100% {
+    text-shadow: 0 0 5px currentColor, 0 0 10px currentColor,
+      0 0 15px currentColor;
+  }
+  50% {
+    text-shadow: 0 0 10px currentColor, 0 0 20px currentColor,
+      0 0 30px currentColor;
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.stagger-delay-1 {
+  animation-delay: 0.1s;
+}
+.stagger-delay-2 {
+  animation-delay: 0.2s;
+}
+.stagger-delay-3 {
+  animation-delay: 0.3s;
+}
+.stagger-delay-4 {
+  animation-delay: 0.4s;
+}
+.stagger-delay-5 {
+  animation-delay: 0.5s;
+}
+
+/* Project card reveal animation */
+.project-reveal {
+  animation: scroll-in-up 0.8s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Gradient text animation */
+@keyframes gradient-shift {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+.animate-gradient-text {
+  background-size: 200% 200%;
+  animation: gradient-shift 3s ease infinite;
+}
+
+/* Skill bar animations */
+@keyframes skill-bar {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.animate-skill-bar {
+  animation: skill-bar 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transform-origin: left center;
+}
+
+/* Skill item hover effects */
+.skill-item {
+  transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+  transform: translateX(4px);
+}
+
+.skill-item:hover .animate-skill-bar {
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+/* Modern skill card animations */
+.skill-card {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px) rotateX(2deg) rotateY(2deg);
+}
+
+/* Enhanced skill progress bar animation */
+@keyframes skill-progress-bar {
+  0% {
+    transform: scaleX(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scaleX(1);
+    opacity: 1;
+  }
+}
+
+.skill-progress-bar {
+  animation: skill-progress-bar 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  transform-origin: left center;
+  position: relative;
+  overflow: hidden;
+}
+
+.skill-progress-bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: shimmer-effect 2s infinite;
+}
+
+@keyframes shimmer-effect {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Glassmorphism effect enhancements */
+.skill-glassmorphism {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+}
+
+/* 3D skill icon animations */
+.skill-icon-3d {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.skill-card:hover .skill-icon-3d {
+  transform: rotateY(15deg) rotateX(5deg) scale(1.1);
+}
+
+/* Floating animation for technology badges */
+@keyframes float-badge {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.tech-badge-float {
+  animation: float-badge 3s ease-in-out infinite;
+}
+
+.tech-badge-float:nth-child(2) {
+  animation-delay: 0.5s;
+}
+
+.tech-badge-float:nth-child(3) {
+  animation-delay: 1s;
+}
+
+.tech-badge-float:nth-child(4) {
+  animation-delay: 1.5s;
+}
+
+/* Enhanced gradient background animation */
+@keyframes gradient-bg-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient-bg {
+  background-size: 200% 200%;
+  animation: gradient-bg-shift 8s ease infinite;
+}
+
+/* Pulse effect for skill percentages */
+@keyframes pulse-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 5px currentColor;
+  }
+  50% {
+    box-shadow: 0 0 20px currentColor, 0 0 30px currentColor;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Project card layout consistency */
+.project-card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-height: 500px;
+}
+
+.project-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-image {
+  height: 192px; /* Fixed height for consistency */
+  min-height: 192px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.project-card-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.project-card-description {
+  flex: 1;
+  min-height: 80px; /* Minimum height for descriptions */
+}
+
+.project-card-tags {
+  margin-top: auto;
+  margin-bottom: 1rem;
+}
+
+.project-card-actions {
+  margin-top: auto;
 }
